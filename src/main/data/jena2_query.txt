@@ -1,4 +1,11 @@
-SELECT ?x
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?name "
 WHERE {
-    ?x <http://www.w3.org/2001/vcard-rdf/3.0#FN> "John Smith"
-}
+    ?x rdf:type owl:NamedIndividual .
+    ?x rdf:type :Person .
+    ?x :hasName ?name
+    }

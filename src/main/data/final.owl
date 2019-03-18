@@ -1,0 +1,557 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#"
+     xml:base="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasActor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isActor"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasActor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasActor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasDirector">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isDirector"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasActor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasActor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasGender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasGender"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Gender"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasGenre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasWriter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasWriter">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isWriter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isActor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isColleague -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isColleague">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isColleague"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isDirector"/>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isWriter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#isWriter">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasAge">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasCountry -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasCountry">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasLanguage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasLanguage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasNationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasNationality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#hasYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Dirtector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Dirtector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Gender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Gender"/>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Genre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Genre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Writer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Writer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Action -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Action">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Comedy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Comedy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Crime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Crime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Drama -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Drama">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Thriller -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Thriller">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#bradPitt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#bradPitt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male"/>
+        <isActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sEleven"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</hasAge>
+        <hasName>Brad Pitt</hasName>
+        <hasNationality>American</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#female -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#female"/>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#georgeClooney -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#georgeClooney">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Dirtector"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Writer"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male"/>
+        <isActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sEleven"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57</hasAge>
+        <hasName>George Clooney</hasName>
+        <hasNationality>American</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#georgeNolfi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#georgeNolfi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Writer"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male"/>
+        <isWriter rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sTwelve"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51</hasAge>
+        <hasName>George Nolfi</hasName>
+        <hasNationality>English</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#johnTravolta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#johnTravolta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male"/>
+        <isActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#pulpFiction"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</hasAge>
+        <hasName>John Travolta</hasName>
+        <hasNationality>American</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#juliaRoberts -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#juliaRoberts">
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#female"/>
+        <isActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sEleven"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51</hasAge>
+        <hasName>Julia Roberts</hasName>
+        <hasNationality>American</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#killBill -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#killBill">
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Action"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Crime"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Thriller"/>
+        <hasCountry>USA</hasCountry>
+        <hasLanguage>English</hasLanguage>
+        <hasTitle>Kill Bill (volume1)</hasTitle>
+        <hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2003</hasYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male"/>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#mattDamon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#mattDamon">
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male"/>
+        <isActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sEleven"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</hasAge>
+        <hasName>Matt Damon</hasName>
+        <hasNationality>American</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#pulpFiction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#pulpFiction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Movie"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Crime"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Thriller"/>
+        <hasCountry>USA</hasCountry>
+        <hasLanguage>English</hasLanguage>
+        <hasTitle>Pulp Fiction</hasTitle>
+        <hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1994</hasYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#quentinTarantino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#quentinTarantino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Dirtector"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Writer"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male"/>
+        <isActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#killBill"/>
+        <isDirector rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#killBill"/>
+        <isDirector rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#pulpFiction"/>
+        <isWriter rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#killBill"/>
+        <isWriter rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#pulpFiction"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53</hasAge>
+        <hasName>Quentin Tarantino</hasName>
+        <hasNationality>American</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#stevenSoderbergh -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#stevenSoderbergh">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Dirtector"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male"/>
+        <isDirector rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sEleven"/>
+        <isDirector rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sTwelve"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</hasAge>
+        <hasName>Steven Soderbergh</hasName>
+        <hasNationality>American</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#tedGriffin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#tedGriffin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Writer"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#male"/>
+        <isWriter rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sEleven"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</hasAge>
+        <hasName>Ted Griffin</hasName>
+        <hasNationality>American</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#theMonumentsMen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#theMonumentsMen">
+        <hasActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#georgeClooney"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#mattDamon"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#georgeClooney"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Comedy"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Drama"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#georgeClooney"/>
+        <hasCountry>US</hasCountry>
+        <hasLanguage>English</hasLanguage>
+        <hasTitle>The Monuments Men</hasTitle>
+        <hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2014</hasYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#umaThurman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#umaThurman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Writer"/>
+        <hasGender rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#female"/>
+        <isActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#pulpFiction"/>
+        <isWriter rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#killBill"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</hasAge>
+        <hasName>American</hasName>
+        <hasName>Uma Thurman</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sEleven -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sEleven">
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Action"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Crime"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Thriller"/>
+        <hasCountry>USA</hasCountry>
+        <hasLanguage>English</hasLanguage>
+        <hasTitle>Ocean&apos;s Eleven</hasTitle>
+        <hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2001</hasYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sTwelve -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean&apos;sTwelve">
+        <hasActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#bradPitt"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#georgeClooney"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#juliaRoberts"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#mattDamon"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Action"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Crime"/>
+        <hasGenre rdf:resource="http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#Thriller"/>
+        <hasCountry>US</hasCountry>
+        <hasLanguage>English</hasLanguage>
+        <hasTitle>Ocean&apos;s Twelve</hasTitle>
+        <hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2004</hasYear>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

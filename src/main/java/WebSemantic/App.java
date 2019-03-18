@@ -22,7 +22,7 @@ public class App
         Jena6 jena6 = new Jena6();
 
         //jena1.main();
-        //jena2.main();
+        jena2.main();
 
     }
 }

@@ -1,0 +1,297 @@
+@prefix :  <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3>
+        rdf:type  owl:Ontology .
+
+:hasActor  rdf:type         owl:ObjectProperty ;
+        rdfs:subPropertyOf  owl:topObjectProperty ;
+        owl:inverseOf       :isActor .
+
+_:b0    rdf:type  owl:Restriction .
+
+:hasActor  rdfs:domain  _:b0 .
+
+_:b0    owl:onProperty      :hasActor ;
+        owl:someValuesFrom  :Movie .
+
+_:b1    rdf:type  owl:Restriction .
+
+:hasActor  rdfs:range  _:b1 .
+
+_:b1    owl:onProperty      :hasActor ;
+        owl:someValuesFrom  :Person .
+
+:hasDirector  rdf:type  owl:ObjectProperty ;
+        owl:inverseOf  :isDirector .
+
+_:b2    rdf:type  owl:Restriction .
+
+:hasDirector  rdfs:domain  _:b2 .
+
+_:b2    owl:onProperty      :hasActor ;
+        owl:someValuesFrom  :Movie .
+
+_:b3    rdf:type  owl:Restriction .
+
+:hasDirector  rdfs:range  _:b3 .
+
+_:b3    owl:onProperty      :hasActor ;
+        owl:someValuesFrom  :Person .
+
+:hasGender  rdf:type  owl:ObjectProperty ;
+        rdf:type     owl:FunctionalProperty ;
+        rdfs:domain  :Person .
+
+_:b4    rdf:type  owl:Restriction .
+
+:hasGender  rdfs:range  _:b4 .
+
+_:b4    owl:onProperty            :hasGender ;
+        owl:qualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+        owl:onClass               :Gender .
+
+:hasGenre  rdf:type  owl:ObjectProperty ;
+        rdfs:domain  :Movie .
+
+:hasWriter  rdf:type   owl:ObjectProperty ;
+        owl:inverseOf  :isWriter ;
+        rdfs:domain    :Movie ;
+        rdfs:range     :Person .
+
+:isActor  rdf:type  owl:ObjectProperty .
+
+:isColleague  rdf:type  owl:ObjectProperty ;
+        rdf:type     owl:SymmetricProperty ;
+        rdfs:domain  :Person .
+
+_:b5    rdf:type  owl:Restriction .
+
+:isColleague  rdfs:range  _:b5 .
+
+_:b5    owl:onProperty      :isColleague ;
+        owl:someValuesFrom  :Person .
+
+:isDirector  rdf:type  owl:ObjectProperty .
+
+:isWriter  rdf:type  owl:ObjectProperty ;
+        rdfs:domain  :Person ;
+        rdfs:range   :Movie .
+
+:hasAge  rdf:type    owl:DatatypeProperty ;
+        rdf:type     owl:FunctionalProperty ;
+        rdfs:domain  :Person ;
+        rdfs:range   xsd:integer .
+
+:hasCountry  rdf:type  owl:DatatypeProperty ;
+        rdfs:domain  :Movie ;
+        rdfs:range   xsd:string .
+
+:hasLanguage  rdf:type  owl:DatatypeProperty ;
+        rdfs:domain  :Movie ;
+        rdfs:range   xsd:string .
+
+:hasName  rdf:type          owl:DatatypeProperty ;
+        rdfs:subPropertyOf  owl:topDataProperty ;
+        rdfs:domain         :Person ;
+        rdfs:range          xsd:string .
+
+:hasNationality  rdf:type  owl:DatatypeProperty ;
+        rdfs:domain  :Person ;
+        rdfs:range   xsd:string .
+
+:hasTitle  rdf:type  owl:DatatypeProperty ;
+        rdfs:domain  :Movie ;
+        rdfs:range   xsd:string .
+
+:hasYear  rdf:type   owl:DatatypeProperty ;
+        rdfs:domain  :Movie ;
+        rdfs:range   xsd:integer .
+
+:Actor  rdf:type         owl:Class ;
+        rdfs:subClassOf  :Person .
+
+:Dirtector  rdf:type     owl:Class ;
+        rdfs:subClassOf  :Person .
+
+:Gender  rdf:type  owl:Class .
+
+:Genre  rdf:type  owl:Class .
+
+:Movie  rdf:type  owl:Class .
+
+:Person  rdf:type  owl:Class .
+
+:Writer  rdf:type        owl:Class ;
+        rdfs:subClassOf  :Person .
+
+:Action  rdf:type  owl:NamedIndividual ;
+        rdf:type  :Genre .
+
+:Comedy  rdf:type  owl:NamedIndividual ;
+        rdf:type  :Genre .
+
+:Crime  rdf:type  owl:NamedIndividual ;
+        rdf:type  :Genre .
+
+:Drama  rdf:type  owl:NamedIndividual ;
+        rdf:type  :Genre .
+
+:Thriller  rdf:type  owl:NamedIndividual ;
+        rdf:type  :Genre .
+
+:bradPitt  rdf:type      owl:NamedIndividual ;
+        rdf:type         :Actor ;
+        rdf:type         :Person ;
+        :hasGender       :male ;
+        :isActor         <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sEleven> ;
+        :hasAge          55 ;
+        :hasName         "Brad Pitt" ;
+        :hasNationality  "American" .
+
+:female  rdf:type  owl:NamedIndividual .
+
+:georgeClooney  rdf:type  owl:NamedIndividual ;
+        rdf:type         :Actor ;
+        rdf:type         :Dirtector ;
+        rdf:type         :Person ;
+        rdf:type         :Writer ;
+        :hasGender       :male ;
+        :isActor         <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sEleven> ;
+        :hasAge          57 ;
+        :hasName         "George Clooney" ;
+        :hasNationality  "American" .
+
+:georgeNolfi  rdf:type   owl:NamedIndividual ;
+        rdf:type         :Person ;
+        rdf:type         :Writer ;
+        :hasGender       :male ;
+        :isWriter        <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sTwelve> ;
+        :hasAge          51 ;
+        :hasName         "George Nolfi" ;
+        :hasNationality  "English" .
+
+:johnTravolta  rdf:type  owl:NamedIndividual ;
+        rdf:type         :Person ;
+        :hasGender       :male ;
+        :isActor         :pulpFiction ;
+        :hasAge          59 ;
+        :hasName         "John Travolta" ;
+        :hasNationality  "American" .
+
+:juliaRoberts  rdf:type  owl:NamedIndividual ;
+        :hasGender       :female ;
+        :isActor         <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sEleven> ;
+        :hasAge          51 ;
+        :hasName         "Julia Roberts" ;
+        :hasNationality  "American" .
+
+:killBill  rdf:type   owl:NamedIndividual ;
+        :hasGenre     :Action ;
+        :hasGenre     :Crime ;
+        :hasGenre     :Thriller ;
+        :hasCountry   "USA" ;
+        :hasLanguage  "English" ;
+        :hasTitle     "Kill Bill (volume1)" ;
+        :hasYear      2003 .
+
+:male   rdf:type  owl:NamedIndividual .
+
+:mattDamon  rdf:type     owl:NamedIndividual ;
+        :hasGender       :male ;
+        :isActor         <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sEleven> ;
+        :hasAge          48 ;
+        :hasName         "Matt Damon" ;
+        :hasNationality  "American" .
+
+:pulpFiction  rdf:type  owl:NamedIndividual ;
+        rdf:type      :Movie ;
+        :hasGenre     :Crime ;
+        :hasGenre     :Thriller ;
+        :hasCountry   "USA" ;
+        :hasLanguage  "English" ;
+        :hasTitle     "Pulp Fiction" ;
+        :hasYear      1994 .
+
+:quentinTarantino  rdf:type  owl:NamedIndividual ;
+        rdf:type         :Actor ;
+        rdf:type         :Dirtector ;
+        rdf:type         :Person ;
+        rdf:type         :Writer ;
+        :hasGender       :male ;
+        :isActor         :killBill ;
+        :isDirector      :killBill ;
+        :isDirector      :pulpFiction ;
+        :isWriter        :killBill ;
+        :isWriter        :pulpFiction ;
+        :hasAge          53 ;
+        :hasName         "Quentin Tarantino" ;
+        :hasNationality  "American" .
+
+:stevenSoderbergh  rdf:type  owl:NamedIndividual ;
+        rdf:type         :Dirtector ;
+        rdf:type         :Person ;
+        :hasGender       :male ;
+        :isDirector      <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sEleven> ;
+        :isDirector      <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sTwelve> ;
+        :hasAge          56 ;
+        :hasName         "Steven Soderbergh" ;
+        :hasNationality  "American" .
+
+:tedGriffin  rdf:type    owl:NamedIndividual ;
+        rdf:type         :Writer ;
+        :hasGender       :male ;
+        :isWriter        <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sEleven> ;
+        :hasAge          48 ;
+        :hasName         "Ted Griffin" ;
+        :hasNationality  "American" .
+
+:theMonumentsMen  rdf:type  owl:NamedIndividual ;
+        :hasActor     :georgeClooney ;
+        :hasActor     :mattDamon ;
+        :hasDirector  :georgeClooney ;
+        :hasGenre     :Comedy ;
+        :hasGenre     :Drama ;
+        :hasWriter    :georgeClooney ;
+        :hasCountry   "US" ;
+        :hasLanguage  "English" ;
+        :hasTitle     "The Monuments Men" ;
+        :hasYear      2014 .
+
+:umaThurman  rdf:type  owl:NamedIndividual ;
+        rdf:type    :Actor ;
+        rdf:type    :Person ;
+        rdf:type    :Writer ;
+        :hasGender  :female ;
+        :isActor    :pulpFiction ;
+        :isWriter   :killBill ;
+        :hasAge     43 ;
+        :hasName    "American" ;
+        :hasName    "Uma Thurman" .
+
+<http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sEleven>
+        rdf:type      owl:NamedIndividual ;
+        :hasGenre     :Action ;
+        :hasGenre     :Crime ;
+        :hasGenre     :Thriller ;
+        :hasCountry   "USA" ;
+        :hasLanguage  "English" ;
+        :hasTitle     "Ocean's Eleven" ;
+        :hasYear      2001 .
+
+<http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#ocean'sTwelve>
+        rdf:type      owl:NamedIndividual ;
+        :hasActor     :bradPitt ;
+        :hasActor     :georgeClooney ;
+        :hasActor     :juliaRoberts ;
+        :hasActor     :mattDamon ;
+        :hasGenre     :Action ;
+        :hasGenre     :Crime ;
+        :hasGenre     :Thriller ;
+        :hasCountry   "US" ;
+        :hasLanguage  "English" ;
+        :hasTitle     "Ocean's Twelve" ;
+        :hasYear      2004 .
