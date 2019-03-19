@@ -1,15 +1,11 @@
 package WebSemantic;
 
-
-import org.apache.jena.base.Sys;
-
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Jena1{
 
-    public void main() throws FileNotFoundException, IOException
+    public void main() throws IOException
     {
         String filePath = new File("").getAbsolutePath();
         FileReader fileReader = new FileReader(filePath + "\\src\\main\\data\\final.ttl");

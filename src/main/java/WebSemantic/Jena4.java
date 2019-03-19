@@ -5,12 +5,11 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Jena4 {
 
-    public void main() throws IOException
+    public void main()
     {
         Scanner reader = new Scanner(System.in);
         System.out.print("Enter the name of the movie : ");
