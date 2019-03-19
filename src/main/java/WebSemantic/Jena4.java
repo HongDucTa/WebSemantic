@@ -28,14 +28,15 @@ public class Jena4 {
                         "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
                         "PREFIX : <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#>" +
                         "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " +
-                        "SELECT ?year ?country ?genre ?actors " +
+                        "SELECT (GROUP_CONCAT(DISTINCT ?year; SEPARATOR=\", \") AS ?years) (GROUP_CONCAT(DISTINCT ?country; SEPARATOR=\", \") AS ?countries) (GROUP_CONCAT(DISTINCT ?genre; SEPARATOR=\" ; \") AS ?genres) (GROUP_CONCAT(DISTINCT ?actor; SEPARATOR=\", \") AS ?actors) " +
                         "WHERE { " +
                         "?x rdf:type owl:NamedIndividual ." +
                         "?x :hasTitle \"" + title +"\" ." +
-                        "?x :hasCountry ?country ." +
-                        "?x :hasYear ?year ." +
-                        "?x :hasGenre ?genre ." +
-                        "?x :hasActor ?actors}";
+                        "OPTIONAL {?x :hasCountry ?country .} ." +
+                        "OPTIONAL {?x :hasYear ?year .} ." +
+                        "OPTIONAL {?x :hasGenre ?genre .} ." +
+                        "OPTIONAL {?x :hasActor ?actor .}" +
+                        "}";
 
         Query query = QueryFactory.create(queryString);
 
