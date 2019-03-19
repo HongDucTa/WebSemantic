@@ -21,10 +21,10 @@ public class App
         Jena5 jena5 = new Jena5();
         Jena6 jena6 = new Jena6();
 
-        //jena1.main();
+        jena1.main();
         //jena2.main();
         //jena3.main();
-        jena4.main();
+        //jena4.main();
 
     }
 }
