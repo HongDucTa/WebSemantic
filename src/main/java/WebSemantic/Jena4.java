@@ -1,5 +1,6 @@
 package WebSemantic;
 
+import org.apache.jena.base.Sys;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -14,7 +15,6 @@ public class Jena4 {
         Scanner reader = new Scanner(System.in);
         System.out.print("Enter the name of the movie : ");
         String title = reader.nextLine();
-        System.out.print(title);
 
         Model model = ModelFactory.createDefaultModel();
         String filePath = new File("").getAbsolutePath();
@@ -27,7 +27,11 @@ public class Jena4 {
                         "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
                         "PREFIX : <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#>" +
                         "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " +
-                        "SELECT (GROUP_CONCAT(DISTINCT ?year; SEPARATOR=\", \") AS ?years) (GROUP_CONCAT(DISTINCT ?country; SEPARATOR=\", \") AS ?countries) (GROUP_CONCAT(DISTINCT ?genre; SEPARATOR=\" ; \") AS ?genres) (GROUP_CONCAT(DISTINCT ?actor; SEPARATOR=\", \") AS ?actors) " +
+                        "SELECT" +
+                        " (GROUP_CONCAT(DISTINCT ?year; SEPARATOR=\", \") AS ?years)" +
+                        " (GROUP_CONCAT(DISTINCT ?country; SEPARATOR=\", \") AS ?countries)" +
+                        " (GROUP_CONCAT(DISTINCT ?genre; SEPARATOR=\" ; \") AS ?genres)" +
+                        " (GROUP_CONCAT(DISTINCT ?actor; SEPARATOR=\", \") AS ?actors) " +
                         "WHERE { " +
                         "?x rdf:type owl:NamedIndividual ." +
                         "?x :hasTitle \"" + title +"\" ." +
@@ -42,7 +46,17 @@ public class Jena4 {
         QueryExecution qe = QueryExecutionFactory.create(query,model);
         ResultSet results = qe.execSelect();
 
-        ResultSetFormatter.out(System.out,results,query);
+        if ((ResultSetFormatter.toList(results).get(0)).toString().equals(""))
+        {
+            System.out.println("No results found.");
+        }
+        else
+        {
+            QueryExecution qeBis = QueryExecutionFactory.create(query,model);
+            results = qeBis.execSelect();
+            ResultSetFormatter.out(System.out,results,query);
+            qeBis.close();
+        }
 
         qe.close();
 
