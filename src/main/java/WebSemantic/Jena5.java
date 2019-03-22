@@ -19,7 +19,6 @@ public class Jena5 {
         Reasoner reasoner = new GenericRuleReasoner(Rule.rulesFromURL(filePath + "\\src\\main\\data\\exercice5_rules.txt"));
 
         InfModel infModel = ModelFactory.createInfModel(reasoner,model);
-        StmtIterator iterator = infModel.listStatements();
 
         String queryString =
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +

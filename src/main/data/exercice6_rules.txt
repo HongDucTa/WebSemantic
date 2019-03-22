@@ -1,0 +1,9 @@
+@prefix :  <http://www.semanticweb.org/julian/ontologies/2019/2/untitled-ontology-3#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+[ruleIsQuinquagenaire: (?target :hasAge ?age)greaterThan(?age,50)lessThan(?age,60) -> (?target :isQuinquagenaire :Quinquagenaire)]
+[ruleIsQuadragenaire: (?target :hasAge ?age)greaterThan(?age,40)lessThan(?age,50) -> (?target :isQuadragenaire :Quadragenaire)]
+[ruleIsMoreThan15YearsOld: (?movie :hasYear ?year) lessThan(?year,2004) -> (?movie :isMoreThan15YearsOld :MoreThan15YearsOld)]
